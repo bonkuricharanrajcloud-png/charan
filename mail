@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Get CPU Usage
+CPU=$(top -bn1 | grep "Cpu(s)" | awk '{print int($2)}')
+
+# Set Threshold
+THRESHOLD=0
+
+# Check CPU Usage
+if [ $CPU -gt $THRESHOLD ]
+then
+    SUBJECT="CPU Alert"
+    MESSAGE="Warning! CPU usage is ${CPU}% on $(hostname)"
+
+    echo "$MESSAGE" | mail -s "$SUBJECT" bonkuricharanraj24@gmail.com
+
+    echo "Email notification sent."
+else
+    echo "CPU Usage is Normal: ${CPU}%"
+fi

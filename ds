@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Get Disk Usage
+DISK=$(df -h / | awk 'NR==2 {print $5}' | sed 's/%//')
+
+# Set Threshold
+THRESHOLD=80
+
+# Check Disk Usage
+if [ $DISK -gt $THRESHOLD ]
+then
+    echo "Disk Usage is High: ${DISK}%" | mail -s "Disk Alert" your_email@gmail.com
+    echo "Email notification sent."
+else
+    echo "Disk Usage is Normal: ${DISK}%"
+fi

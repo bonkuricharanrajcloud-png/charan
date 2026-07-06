@@ -1,0 +1,23 @@
+#purpose Crontab
+#owner : charan
+
+# 1. April 5th at midnight
+0 0 5 4 * echo "April 5th midnight"
+
+# 2. 5th of Jan, Jun, Nov - only if Thursday
+0 0 5 1,6,11 4 echo "5th of Jan/Jun/Nov and Thursday"
+
+# 3. At minutes 05 and 27 of hours 9, 10, 11
+5,27 9,10,11 * * * echo "Minutes 05 and 27 of 9-11"
+
+# 4. 34th minute of 9AM on August 15th
+34 9 15 8 * echo "August 15th 9:34 AM"
+
+# 5. Every midnight
+0 0 * * * echo "Midnight every day"
+
+# 6. Every Saturday at 11:59 PM
+59 23 * * 6 echo "Saturday night 11:59 PM"
+
+# 7. After every reboot
+@reboot echo "System rebooted"

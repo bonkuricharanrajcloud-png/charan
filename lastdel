@@ -1,0 +1,6 @@
+#!/bin/bash
+
+head -n -3 sample.txt > temp.txt
+mv temp.txt sample.txt
+
+echo "Last 3 lines deleted."

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo "Enter First Number:"
+read a
+
+echo "Enter Second Number:"
+read b
+
+echo "Choose Operation (+,-,*,/):"
+read op
+
+case $op in
++)
+echo "Result = $((a+b))"
+;;
+-)
+echo "Result = $((a-b))"
+;;
+\*)
+echo "Result = $((a*b))"
+;;
+/)
+echo "Result = $((a/b))"
+;;
+*)
+echo "Invalid Operator"
+;;
+esac

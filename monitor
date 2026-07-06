@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Get Memory Usage
+MEM=$(free | awk '/Mem/ {print int($3/$2 * 100)}')
+
+# Set Threshold
+THRESHOLD=80
+
+# Check Memory Usage
+if [ $MEM -gt $THRESHOLD ]
+then
+    echo "Memory Usage is High: ${MEM}%" | mail -s "Memory Alert" your_email@gmail.com
+    echo "Email notification sent."
+else
+    echo "Memory Usage is Normal: ${MEM}%"
+fi

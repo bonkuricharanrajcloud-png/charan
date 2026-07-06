@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DIR="/home/ec2-user/demo"
+
+if [ -d "$DIR" ]
+then
+    echo "Directory already exists."
+else
+    mkdir $DIR
+    echo "Directory created."
+fi

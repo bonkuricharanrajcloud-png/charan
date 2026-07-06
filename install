@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if systemctl is-active --quiet nginx
+then
+    echo "Nginx is Running"
+else
+    echo "Nginx is Stopped"
+    sudo systemctl start nginx
+    echo "Nginx Started"
+fi
